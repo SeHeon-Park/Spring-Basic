@@ -1,6 +1,7 @@
 package hello.core.beanFind;
 
 import hello.core.AppConfig;
+import hello.core.AutoAppConfig;
 import hello.core.member.MemberService;
 import hello.core.member.MemberServiceImpl;
 import org.assertj.core.api.Assertions;
@@ -40,8 +41,7 @@ public class ApplicationContextBasicFindTest {
 
     @Test  // 실패 코드
     void findBeanByName_x(){
-        MemberServiceImpl xxxxxx = ap.getBean("xxxxxx", MemberServiceImpl.class);
         assertThrows(NoSuchBeanDefinitionException.class,
-                () -> ap.getBean("xxxxxx", MemberServiceImpl.class));   // 저 예외가 터져야 한다!1`
+                () -> ap.getBean("xxxxxx", MemberServiceImpl.class));   // 저 예외가 터져야 한다!
     }
 }
